@@ -1,0 +1,119 @@
+* {
+	font-family: Century Gothic, sans-serif;
+}
+
+.sb-body {
+	overflow: auto;
+	height: auto;
+	background-image: url(../images/biblioteca-central.JPG);
+	min-height: 500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.sb-header {
+	width: 100%;
+    /*height: 12vmin;*/
+    height: 95px;
+    /*position: absolute;*/
+    top: 0;
+    transition: transform 0s ease-out;
+    transform: translate(0,0px);
+    z-index: 6;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.sb-main {
+	max-width: 1240px;
+	/*background: rgba(255, 255, 255, .9);*/
+	/*margin: 50px auto;*/
+	padding: 30px;
+}
+
+.sb-main:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.sb-main .ttl {
+	color: #c8a22b;
+	float: left;
+	height: max-content;
+	font-size: 3.05rem;
+}
+
+.v-word {
+	writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+.libros {
+	background-image: url('../images/bibliotecas/Andamio.png');
+	/*float: right;*/
+	/*width: calc(100% - 3.05rem - 30px);*/
+	width: 100%;
+    height: 570px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 170px 145px 1fr;*/
+}
+
+.libros .w-lib {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 208px 178px 1fr;
+    width: 61%;
+    height: 100%;
+    margin: auto;
+}
+
+.libros .grid-item {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.libros .sub-grid .book-group {
+	height: 135px;
+	width: fit-content;
+	width: -moz-fit-content;
+	margin: auto;
+}
+
+.libros .sub-grid .book-group img {
+	height: 100%;
+}
+
+.libros .sub-grid .book-group a {
+	margin-left: -18px;
+	/*display: inline-block;*/
+	display: initial;
+	position: relative;
+	top: 0px;
+	right: 0px;
+	transition: all .35s;
+}
+
+.libros .sub-grid .book-group a:hover{
+	top: 10px;
+	right: 10px;
+}
+
+.libros .sub-grid .book-group a:first-child {
+	margin: 0;
+}
+
+.libros .sub-grid .name-category {
+	text-align: center;
+	font-size: 15.5px;
+	color: #fff;
+    background-color: #2d2d2d;
+    padding: 0 20px;
+}
+

@@ -1,0 +1,18 @@
+.direc-info {
+	width: 100%;
+	float: left;
+}
+
+.direc-info ul {
+	list-style: none;
+	padding: 0;
+}
+
+.direc-info .half-info {
+	width: 50%;
+	float: left;
+}
+
+.half-info ul {
+	list-style: initial;
+}

@@ -1,0 +1,883 @@
+<script>
+    page_current = 0
+    service_current = 0
+    resource_current = 0
+    colec_current = 0
+</script>
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="../assets/principal/images/logo.png">
+    <link rel="shortcut icon" href="../assets/principal/images/logo.png" />
+    <link rel="stylesheet" href="../assets/principal/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/principal/css/colecciones.css">
+    <link rel="stylesheet" href="../assets/principal/css/style.css">
+    <link rel="stylesheet" href="../assets/principal/css/test.css">
+    <!-- <link rel="stylesheet" href="../assets/principal/css/acordion.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/all.min.css">
+    <link rel="stylesheet" href="../assets/principal/css/directorio.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <title>Biblioteca Central Pedro Zulen</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u = "//172.16.160.241/local_sisbib/matomo/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+</head>
+
+<body class="cole-body" id="colecciones_body">
+    <!-- <a href="http://sisbib.unmsm.edu.pe/BibCentral/SISBIB_beta/" class="go-home">
+        <i class="fas fa-home"></i>
+    </a> -->
+
+    <div class="overlay2" id="overlay2-center"></div>
+
+    <header class="cole-header">
+
+        <div class="nav-elements container-fluid d-flex">
+            <div class="nav-elements-size mx-auto">
+
+                <div id="container-img-center" class="container-img" style="width: auto;">
+                    <a id="logo-unmsm-center" class="h-100 mr-0 float-left" title="UNMSM" href="http://www.unmsm.edu.pe/" target="_blank">
+                        <img class="pr-4" src="../assets/principal/images/header/unmsm_blanco-min.png" alt="UNMSM">
+                    </a>
+                    <!-- <a title="UNMSM" href="http://www.unmsm.edu.pe/" target="_blank"><img src="../assets/principal/images/header/unmsm_blanco-min.png" alt="UNMSM"></a> -->
+                    <!-- <a title="SISBIB" href="../"><img src="../assets/principal/images/header/bibcentral_blanco-min.png" alt="SISBIB"></a> -->
+                    <!-- <div id="title-bib-center" class="h-100" style="margin-left: 95px;"> -->
+                    <a href="../" class="h-100 d-flex align-items-center justify-content-between text-decoration-none" title="SISBIB" style="margin-left: 10vmin;">
+                        <div class="text-white border-0 pl-4 py-3 cont-title-header">
+                            <!-- <p class="mb-0">Universidad Nacional Mayor de San Marcos</p> -->
+                            <h1 class="mb-0">SISTEMA DE BIBLIOTECAS Y BIBLIOTECA CENTRAL</h1>
+                        </div>
+                        <div class="h-100">
+                            <div class="container-img d-flex align-items-center justify-content-between">
+                                <div title="SISBIB" class="h-100">
+                                    <img src="../assets/principal/images/header/bibcentral_blanco-min.png" alt="SISBIB">
+                                </div>
+                                <!-- <a id="logo-vrip-center" class="h-100" title="VRIP" href="https://vrip.unmsm.edu.pe/" target="_blank">
+                                        <img class="px-1" src="assets/principal/images/header/LOGO VICERRECTORADO.png" alt="VRIP">
+                                    </a> -->
+                                <!-- <a id="logo-unmsm-center" class="h-100" title="UNMSM" href="http://www.unmsm.edu.pe/" target="_blank">
+                                        <img class="px-1" src="assets/principal/images/header/unmsm_blanco-min.png" alt="UNMSM">
+                                    </a> -->
+                                <!-- <button id="icon-menu-center" type="button" class="container-icon-menu">
+                                        <div class="icon-menu"></div>
+                                        <div class="icon-menu"></div>
+                                        <div class="icon-menu"></div>
+                                    </button> -->
+                            </div>
+                        </div>
+                    </a>
+                    <!-- </div> -->
+                </div>
+
+                <!-- <div id="div-nav-center" class="div-nav d-none">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link sub-move-bd">Bases de datos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link sub-move-repo">Repositorios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://unmsm.ent.sirsi.net/client/es_ES/all_libs/?dt=list" target="_blank" class="nav-link">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link sub-move-horarios">Horarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://vicus.unmsm.edu.pe/" target="_blank" class="nav-link">Contacto</a>
+                        </li>
+                    </ul>
+                </div> -->
+
+                <!-- <div class="container-img d-flex"> -->
+                <!-- <a id="logo-unmsm-center" class="d-block h-100" title="UNMSM" href="http://www.unmsm.edu.pe/" target="_blank">
+                        <img src="../assets/principal/images/header/unmsm_blanco-min.png" alt="UNMSM">
+                    </a> -->
+                <!-- <a id="logo-unmsm-center" class="h-100" title="UNMSM" href="http://www.unmsm.edu.pe/" target="_blank">
+                        <img class="px-1" src="../assets/principal/images/header/unmsm_blanco-min.png" alt="UNMSM">
+                    </a>
+                    <a id="logo-vrip-center" class="h-100" title="VRIP" href="https://vrip.unmsm.edu.pe/" target="_blank">
+                        <img class="px-1" src="../assets/principal/images/header/LOGO VICERRECTORADO.png" alt="VRIP">
+                    </a> -->
+                <!-- <a id="go_home" class="h-100 go-home" title="Inicio" href="../">
+                        <i class="px-1 fas fa-home"></i>
+                    </a> -->
+                <!-- <button id="icon-menu-center" type="button" class="container-icon-menu">
+                        <div class="icon-menu"></div>
+                        <div class="icon-menu"></div>
+                        <div class="icon-menu"></div>
+                    </button> -->
+                <!-- </div> -->
+
+            </div>
+        </div>
+
+        <div class="dl-menus container-fluid replace-icon-menu" style="font-size: .9rem">
+            <ul class="dl-menu d-flex flex-row align-items-center mx-auto principalnav" style="background-color: #212121; width: 81%; position: relative;">
+                <a data-target="#ModalQuestion-1" data-toggle="modal" href="#" style="color: white;">Nosotros</a>
+                <li><a href="https://unmsm.ent.sirsi.net/client/es_ES/all_libs/?dt=list" target="_blank" style="color: white;">Catálogo</a></li>
+                <div class="drop-servicios">
+                    <ul class="dropdown-menu">
+                        <div class="w-100" style="height: .5rem"></div>
+                        <div class="drop-box">
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <!-- <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios w-100">Servicios en Biblioteca Central</a></li> -->
+                                    <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="../?page=1&service=0" class="w-100">Servicios en Biblioteca Central</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-nivel w-100">Navega por niveles</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Navega por niveles</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista w-100">Ver servicios en modo lista</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Ver servicios en modo lista</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista l-fondor w-100">Fondo Reservado</a></li> -->
+                                            <li class="d-flex" data-animation="13" data-to="1"><a href="" target="_self" class="w-100">Fondo Reservado</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista l-salas w-100">Salas de lectura</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Salas de lectura</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista l-prestamo w-100">Préstamo de computadoras</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Préstamo de computadoras</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista l-cubiculos w-100">Cubículos de estudio grupal</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Cubículos de estudio grupal</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-todo-servicios por-lista l-visual w-100">Servicios para usuarios con limitación visual</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Servicios para usuarios con limitación visual</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="#" class="move-bibliotecas w-100">Sistema de bibliotecas</a></li> -->
+                                    <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="../?page=1&service=1" class="w-100">Sistema de bibliotecas</a></li>
+                                </ul>
+                            </div>
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="../?page=1&service=2" class="w-100">Carné de Biblioteca</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="archivos/documentos/GuiaIngresantes_2019.pdf" target="_blank" class="move-carne-inmenu w-100">Ingresantes</a></li> -->
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-carne link-grad w-100">Graduados</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Graduados</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-carne link-visit w-100">Visitantes</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Visitantes</a></li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1"><a href="#" class="move-carne link-regular w-100">Regulares</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Regulares</a></li>
+                                        </ul>
+                                    </div>
+                                    <li class="d-flex box-yellow" data-animation="13" data-to="1"><a href="../?page=1&service=3" class="w-100">Recepción de trabajos de investigación</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1">
+                                                <a href="#" target="_blank" class="move-tesis link-procrec w-100">Proceso de recepción y publicación de tesis</a>
+                                            </li> -->
+                                            <li class="d-flex">
+                                                <a href="#" target="_blank" class="no-link w-100">Proceso de recepción y publicación de tesis</a>
+                                            </li>
+                                            <!-- <li class="d-flex" data-animation="13" data-to="1">
+                                                <a href="#" target="_blank" class="move-tesis link-const w-100">Constancia de no adeudo de material bibliográfico</a>
+                                            </li> -->
+                                            <li class="d-flex">
+                                                <a href="#" target="_blank" class="no-link w-100">Constancia de no adeudo de material bibliográfico</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex box-dark"><a href="https://unmsm.ent.sirsi.net/client/es_ES/all_libs/?dt=list" target="_blank" class="w-100">Catálogo en línea</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex"><a href="https://unmsm.ent.sirsi.net/client/es_ES/all_libs/search/advanced?dt=list" target="_blank" class="w-100">Búsqueda avanzada</a></li>
+                                            <li class="d-flex"><a href="https://unmsm.ent.sirsi.net/client/help/user-help_es_ES/" target="_blank" class="w-100">Manual de uso</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="w-100" style="position: relative; right: -15px; bottom: -20px;">
+                                        <img src="../assets/principal/images/servicios/SALA DE CIENCIAS.jpg" alt="" class="w-100">
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                    <!-- <ul class="dropdown-menu">
+                        <div class="w-100" style="height: .5rem"></div>
+                        <div class="drop-box">
+                            <li data-animation="13" data-to="1" class="d-flex"><a href="#" class="move-carne w-100">Carné de biblioteca</a></li>
+                            <li data-animation="13" data-to="1" class="d-flex"><a href="#" class="move-tesis w-100">Recepción de tesis</a></li>
+                            <li class="d-flex"><a href="colec_fondor/" target="_blank" class="move-fondor w-100">Fondo reservado</a></li>
+                            <li data-animation="13" data-to="1" class="d-flex"><a href="#" class="move-mas-servicios w-100">Más...</a></li>
+                        </div>
+                    </ul> -->
+                </div>
+                <li data-animation="13" data-to="1" class="dropdown hover-drop-servicios">
+                    <a href="../?page=1" class="move-todo-servicios" style="color: white;">Servicios</a>
+
+                </li>
+                <div class="drop-recursos">
+                    <ul class="dropdown-menu">
+                        <div class="w-100" style="height: .5rem"></div>
+                        <div class="drop-box">
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <!-- <li class="d-flex box-yellow"><a href="#" class="move-bd w-100">Bases de datos</a></li> -->
+                                    <li class="d-flex box-yellow"><a href="../?page=2&resource=0" class="w-100">Bases de datos</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex"><a href="#" class="move-bd w-100">Buscador de bases de datos</a></li> -->
+                                            <li class="d-flex"><a href="../?page=2&resource=0" class="w-100">Buscador de bases de datos</a></li>
+                                            <li class="d-flex"><a href="http://sisbib.unmsm.edu.pe/Intranet.asp?DB=gvrl" target="_blank" class="w-100">Gale</a></li>
+                                            <li class="d-flex"><a href="http://sisbib.unmsm.edu.pe/Intranet.asp?DB=wileyEbook" target="_blank" class="w-100">Wiley</a></li>
+                                            <li class="d-flex"><a href="http://sisbib.unmsm.edu.pe/Intranet.asp?DB=pqcentral" target="_blank" class="w-100">Proquest</a></li>
+                                            <li class="d-flex"><a href="https://www.scopus.com/search/form.uri?display=basic" target="_blank" class="w-100">Scopus</a></li>
+                                            <li class="d-flex"><a href="http://www.sciencedirect.com/" target="_blank" class="w-100">ScienceDirect</a></li>
+                                            <li class="d-flex"><a href="http://www.tandfonline.com/" target="_blank" class="w-100">Taylor&Francis</a></li>
+                                            <!-- <li class="d-flex"><a href="#" class="move-bd w-100">Más bases</a></li> -->
+                                            <li class="d-flex"><a href="../?page=2&resource=0" class="w-100">Más bases</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <li class="d-flex box-yellow"><a href="#" class="move-gestor w-100">Gestores Bibliográficos</a></li> -->
+                                    <li class="d-flex box-yellow"><a href="../?page=2&resource=2" class="w-100">Gestores Bibliográficos</a></li>
+                                </ul>
+                            </div>
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <!-- <li class="d-flex box-yellow"><a href="#" class="move-repo w-100">Repositorios</a></li> -->
+                                    <li class="d-flex box-yellow"><a href="../?page=2&resource=1" class="w-100">Repositorios</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex"><a href="http://revistasinvestigacion.unmsm.edu.pe/" target="_blank" class="w-100">Revistas UNMSM</a></li>
+                                            <li class="d-flex"><a href="http://cybertesis.unmsm.edu.pe/" target="_blank" class="w-100">Cybertesis</a></li>
+                                            <li class="d-flex"><a href="http://fondoeditorial.unmsm.edu.pe/" target="_blank" class="w-100">Fondo Editorial</a></li>
+                                            <li class="d-flex"><a href="http://sisbib.unmsm.edu.pe/Memoria_Oral/index.html" target="_blank" class="w-100">Archivo de Memoria Oral</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- <li class="d-flex box-yellow"><a href="#" class="move-capacitaciones w-100">Capacitaciones en Recursos Electrónicos</a></li> -->
+                                    <li class="d-flex box-yellow"><a href="../?page=2&resource=3" class="w-100">Capacitaciones en Recursos Electrónicos</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex"><a href="" class="move-capacitaciones w-100">Fechas y horarios</a></li> -->
+                                            <li class="d-flex"><a href="../?page=2&resource=3" class="w-100">Fechas y horarios</a></li>
+                                            <li class="d-flex">
+                                                <a href="https://www.facebook.com/pg/RecursosElectronicosBibliotecaCentral/posts/" target="_blank" class=" position-relative w-100 pr-5">
+                                                    Biblioteca Central UNMSM - Recursos Electrónicos
+                                                    <i class="fab fa-facebook-f icon-in-button"></i>
+                                                </a>
+                                            </li>
+                                            <li class="d-flex">
+                                                <a href="https://twitter.com/RecursosE_UNMSM" target="_blank" class=" position-relative w-100 pr-5">
+                                                    @RecursosE_UNMSM
+                                                    <i class="fab fa-twitter icon-in-button"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div style="">
+                                <ul class="list-unstyled">
+                                    <!-- <li class="d-flex box-dark"><a href="#" class="move-preguntas w-100">Preguntas Frecuentes</a></li> -->
+                                    <li class="d-flex box-dark"><a href="../?page=2&resource=4" class="w-100">Preguntas Frecuentes</a></li>
+                                    <div class="menu-enlaces mb-3">
+                                        <ul class="list-unstyled">
+                                            <!-- <li class="d-flex"><a href="#" class="move-preguntas como-bd w-100">Cómo acceder a las bases de datos dentro y fuera del campus</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Cómo acceder a las bases de datos dentro y fuera del campus</a></li>
+                                            <!-- <li class="d-flex"><a href="#" class="move-preguntas que-bd w-100">Qué son las bases de datos</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Qué son las bases de datos</a></li>
+                                            <!-- <li class="d-flex"><a href="#" class="move-preguntas como-gestores w-100">Cómo utilzar los gestores bibliográficos</a></li> -->
+                                            <li class="d-flex"><a href="#" class="no-link w-100">Cómo utilzar los gestores bibliográficos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="w-100" style="position: relative; right: -15px; bottom: -20px;">
+                                        <img src="../assets/principal/images/servicios/SALA UNIVERSIA.jpg" alt="" class="w-100">
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <li class="dropdown hover-drop-recursos">
+                    <a href="../?page=2" class="move-rec-elec" style="color: white;">Recursos electrónicos</a>
+
+                </li>
+                <!-- <li data-animation="14" data-to="0"><a href="#" class="move-eventos" style="color: white;">Eventos</a></li> -->
+                <div class="float-right" style="color: #C8A22B; position: absolute; right: 0; margin-right: 10px; cursor: default;">
+                    <!-- <a data-target="#intra-1" data-toggle="modal" href="#" style="color: #fff;">Intranet</a> -->
+                    <a class="hover-icon" href="" target="_self" title="directorio"><i class="fas fa-phone"></i></a>
+                    <a class="hover-icon" href="https://instagram.com/BibliotecaUNMSM" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a>
+                    <a class="hover-icon" href="https://twitter.com/BibliotecaUNMSM" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="hover-icon" href="https://www.facebook.com/BibliotecaCentralPedroZulen" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </ul>
+        </div>
+
+    </header>
+
+
+    <main class="cole-main cont">
+
+        <div class="w-25 float-left dir-list sticky-list">
+
+            <div class="list-direc mr-5">
+                <a href="#dsbbc" class="new-box">Jefatura de la DSBBC</a>
+                <a href="#oaci" class="new-box">Oficina de Automatización y Capacitación Informacional</a>
+                <a href="#uadm" class="new-box">Unidad Administrativa</a>
+                <a href="#ucol" class="new-box">Unidad de Gestión de Colecciones</a>
+                <a href="#uinf" class="new-box">Unidad de Informática</a>
+                <a href="#uorg" class="new-box">Unidad de Organización y Análisis de Recursos de Información</a>
+                <a href="#ucul" class="new-box">Unidad de Promoción y Coordinación Cultural</a>
+                <a href="#ubib" class="new-box">Unidad de Servicios Bibliográficos y Multimedia</a>
+                <a href="#uinv" class="new-box">Unidad de Servicios de Investigación</a>
+                <a href="#uhem" class="new-box">Unidad de Servicios Hemerográficos</a>
+                <a href="#usec" class="new-box">Unidad de Secretaría y Archivo</a>
+                <a href="#usop" class="new-box">Unidad de Soporte Técnico</a>
+            </div>
+
+        </div>
+
+        <div class="w-75 float-left">
+
+            <div id="dsbbc" class="mb-3">
+                <div class="h2 title-sisbib">Dirección de Sistema de Bibliotecas y Biblioteca Central</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Liliana Mercedes Medina Sandoval</strong><br><span class="ml-3">Directora de la DSBBC</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:lmedinas@unmsm.edu.pe">lmedinas@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7566</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 106</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradora:</p>
+                            <ul>
+                                <li>Maribel Fernández Mori (Secretaria)</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>619-7000, anexo 7701</li>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 107</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="oaci" class="mb-3">
+                <div class="h2 title-sisbib">Oficina de Automatización y Capacitación Informacional</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Luis Iván Castillo Villafuerte </strong><br><span class="ml-3">Jefe de la Oficina de Automatización y Capacitación Informacional</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:lcastillov3@unmsm.edu.pe">lcastillov3@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7643</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 303</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Sayuri Gabriela Támara Trujillo</li>
+                                <li>Andy Ander Yupanqui García</li>
+                                <li>Alejandro Villanueva Fernandez</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>619-7000, anexo 7617</li>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 305</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="uadm" class="mb-3">
+                <div class="h2 title-sisbib">Unidad Administrativa</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Miguel Angel Pacheco Mesías</strong><br><span class="ml-3">Jefe de la Unidad Administrativa</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:mpachecom@unmsm.edu.pe">mpachecom@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7559</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 112</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Alejandro Suárez Román</li>
+                                <li>Franco Simón Morocho Pacotico (Área de Personal)</li>
+                                <li>Jhosep Christopher Díaz Lima</li>
+                                <li>Jymi Vasquez Prado</li>
+                                <!-- <li>Jorge Luis Córdova Garay</li> -->
+                                <li>Luis Alberto Baez Quispe</li>
+                                <!-- <li>Luz Karinna Guerreros Delzo (Área de Presupuesto)</li> -->
+                                <li>Marianella Karelia Heredia Silva (Secretaria)</li>
+                                <li>Maritza Olivares Soldevilla</li>
+                                <li>Omar de la Cruz Valdivia</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>619-7000, anexos 7700 / 7562</li>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexos 111 / 400</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ucol" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Gestión de Colecciones</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Gloria Esther Casanova Sanelli</strong><br><span class="ml-3">Jefa de la Unidad de Getión de Colecciones</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:gcasanovas_bc@unmsm.edu.pe">gcasanovas_bc@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7652</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 115</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Daniel Serafín Bustinza Terrazas</li>
+                                <li>Emperatriz Marco Effio</li>
+                                <li>Guillermo Aznarán Vargas</li>
+                                <li>Jorge Ortíz Atiquipa</li>
+                                <li>Jorge Rosales Peña</li>
+                                <li>Juan Carlos Carbajal Quiñones</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 503</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="uinf" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Informática</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Belizario Aricochea Zambrano</strong><br><span class="ml-3">Jefe de la Unidad de Informática</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:baricocheaz@unmsm.edu.pe">baricocheaz@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7620</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 212</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Bryan Corrales Negrini</li>
+                                <li>Carlos Alberto Labán Mejía</li>
+                                <li>David Castro Aquino</li>
+                                <li>Marco Antonio López Muñoz</li>
+                                <li>Jorge Antonio Rodríguez Ubillús</li>
+                                <li>Norma Beatriz Alpun Villarroel (área de Carné)</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-envelope mr-2"></i><a href="mailto:informatica.dsbbc@unmsm.edu.pe">informatica.dsbbc@unmsm.edu.pe</a></li>
+                                <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7626</li>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 209 / 211</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="uorg" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Organización y Análisis de Recursos de Información</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Roberto Vergara Huancas</strong><br><span class="ml-3">Jefe de la Unidad de Organización y Análisis de Recursos de Información</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:rvergarah_bc@unmsm.edu.pe">rvergarah_bc@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7650</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 504</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Edward Donato Aguilar Medina</li>
+                                <li>Iliana del Carmen Casusol Cavero</li>
+                                <li>Judith del Carmen Cuevas Sánchez</li>
+                                <li>Lissette Marie Beatriz Campos García</li>
+                                <li>Paul Franco Hidalgo Blanco</li>
+                                <li>Rosario Lucila Conde Cruz</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 505</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ucul" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Promoción y Coordinación Cultural</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Fredy Willams Vidalón Sánchez</strong><br><span class="ml-3">Jefe de la Unidad de Promoción y Coordinación Cultural</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:fredy.vidalon@unmsm.edu.pe">fredy.vidalon@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7619</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 205</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="ubib" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Servicios Bibliográficos y Multimedia</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Sara Esther Aliaga Romero</strong><br><span class="ml-3">Jefa de la Unidad de Servicios Bibliográficos y Multimedia</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:saliagar_af@unmsm.edu.pe">saliagar_af@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7653</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 101</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Aldo Flores Aguilar</li>
+                                <li>Ever Guzman Chavez Gaspar</li>
+                                <li>Grimaldo Pérez Salvatierra</li>
+                                <li>Griselda Gutierrez Huamán</li>
+                                <li>Jessica María Espinel Cruz</li>
+                                <li>José Antonio Boza Monteverde</li>
+                                <li>José Isabel Llontop Yaipen</li>
+                                <li>Mabel Herrera Salas</li>
+                                <li>Marcial Acuña Rojas</li>
+                                <li>Margarita Sonia Macazana Parco</li>
+                                <li>María Esther Acuña Quiroz</li>
+                                <li>Mónica Paola Vargas Pando</li>
+                                <!-- <li>Norma Romero Oyola</li> -->
+                                <!-- <li>Salomon Israel Torres Ayma</li> -->
+                                <li>Tomás Agapito Montes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="uinv" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Servicios de Investigación</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Alberto Loza Nehmad</strong><br><span class="ml-3">Jefe de Servicios de Investigación</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:alozan_bc@unmsm.edu.pe">alozan_bc@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7651</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 508</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradora:</p>
+                            <ul>
+                                <li>Ericka Geraldine Paredes Schmitt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="uhem" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Servicios Hemerográficos</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Juan Ricardo Altamirano Cárdenas</strong><br><span class="ml-3">Encargado de la Unidad de Servicios Hemerográficos</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:jaltamiranoc_bc@unmsm.edu.pe">jaltamiranoc_bc@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7657</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 304</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradores:</p>
+                            <ul>
+                                <li>Edgardo Santos Meza</li>
+                                <!-- <li>José Luis Ibarguen Serrano</li> -->
+                                <li>Juan Carlos Sosa Benavides</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 300 - 512</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="usec" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Secretaría y Archivo</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Carolina Mautino Chumbipuma</strong><br><span class="ml-3">Jefa de la Unidad de Secretaría y Archivo</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:cmautinoc_ac@unmsm.edu.pe">cmautinoc_ac@unmsm.edu.pe</a></li>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7661</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 518</li>
+                        </ul>
+
+                    </div>
+                    <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaboradora:</p>
+                            <ul>
+                                <li>Dionicia Felicia Aquino Garay</li>
+                            </ul>
+                        </div>
+                        <div class="half-info pl-5">
+                            <p>Contacto:</p>
+                            <ul>
+                                <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 119</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="usop" class="mb-3">
+                <div class="h2 title-sisbib">Unidad de Soporte Técnico</div>
+                <div class="cont">
+                    <div class="direc-info ml-3 mb-2">
+                        <i class="fas fa-bookmark mr-2"></i><strong>Juan José Ronceros Simeón</strong><br><span class="ml-3">Encargado de la Unidad de Soporte Técnico</span>
+                    </div>
+                    <div class="direc-info ml-5 mb-2">
+                        <ul>
+                            <li><i class="fas fa-phone mr-2"></i>619-7000, anexo 7568</li>
+                            <li><i class="fas fa-phone-square mr-2"></i>515-8023, anexo 399</li>
+                        </ul>
+
+                    </div>
+                    <!-- <div class="direc-info mb-2">
+                        <div class="half-info pl-5">
+                            <p>Colaborador:</p>
+                            <ul>
+                                <li>Juan José Ronceros Simeón</li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="sec-top cont">
+            <div style="float: left">
+                <div class="title mb-2 text-center">LA BIBLIOTECA EN NÚMEROS</div>
+                <div class="d-flex flex-wrap">
+                    <div style="margin-right: 1px;">
+                        <div class="division-block-h block-bib-num" style="border-right: 2px dotted #C8A22B;">
+                            <div style="display: block;">
+                                <span class="counter" data-count="37">37</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Bases de datos por suscripción</p>
+                            </div>
+                            <div style="display: block;">
+                                <span class="h3 d-block text-center">+<span class="counter d-inline-block" data-count="10700">10,700</span></span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Tesis en el repositorio Cybertesis</p>
+                            </div>
+                            <div style="display: block;">
+                                <span class="h3 d-block text-center">+<span class="counter d-inline-block" data-count="9300">9,300</span></span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Artículos en el Repositorio de revistas</p>
+                                <!-- <span class="counter" data-count="23">23</span>
+                            <p class="descrip-counter text-center text-uppercase mb-0">Títulos en el Repositorio de Revistas</p> -->
+                            </div>
+                            <div class="last mr-4" style="display: block;">
+                                <span class="counter" data-count="147">147</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Libros digitalizados relacionados a la UNMSM</p>
+                            </div>
+                        </div>
+                        <div class="title mt-2 mr-4 text-center text-uppercase">Recursos electrónicos</div>
+                    </div>
+
+
+                    <div>
+                        <div class="division-block-h block-bib-num" style="border-left: 2px dotted #C8A22B;">
+                            <div class="ml-4" style="display: block;">
+                                <span class="counter" data-count="400">400</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Aforo del auditorio Rosa Alarco</p>
+                            </div>
+                            <div style="display: block;">
+                                <span class="counter" data-count="852">852</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Puestos de lectura</p>
+                            </div>
+                            <div style="display: block;">
+                                <span class="counter" data-count="74">74</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Puestos de computadoras</p>
+                            </div>
+                            <div class="last" style="display: block;">
+                                <span class="counter" data-count="13">13</span>
+                                <p class="descrip-counter text-center text-uppercase mb-0">Cubículos de Estudio Grupal</p>
+                            </div>
+                        </div>
+                        <div class="title mt-2 ml-4 text-center text-uppercase">Aforos</div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="float: right; margin: auto;">
+                <div class="mb-1"><a data-target="#ModalQuestion-1" data-toggle="modal" class="link-white" href="#">NOSOTROS</a> / <a href="https://goo.gl/maps/uTYzmpT41ES2" target="_blank" class="link-white">UBICACIÓN</a></div>
+                <div class="mb-1"><a href="" target="_self" class="link-white">DIRECTORIO BC</a></div>
+                <div class="icons mb-1" style="display: flex; align-items: center; justify-content: space-evenly; font-size: 40px;">
+                    <a href="https://www.facebook.com/BibliotecaCentralPedroZulen" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="mailto:bibcent@unmsm.edu.pe" target="_blank"><i class="fas fa-envelope"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                </div>
+            </div>
+        </div>
+        <div class="sec-bot">
+            Página creada por la Biblioteca Central 'Pedro Zulen' - Oficina de Automatización y Capacitación Informacional
+        </div>
+
+    </footer>
+
+    <!-- Modal question-1 -->
+    <div style="background-color: rgba(0, 0, 0, 0.5);" class="modal fade" id="ModalQuestion-1" tabindex="-1" role="dialog" aria-labelledby="ModalQuestion-1_Label" aria-hidden="true">
+        <div style="max-width: 1400px;" class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-image: url('../assets/principal/images/biblioteca-central.JPG'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                <div class="modal-header" style="background-color: rgba(255, 255, 255, .8);">
+                    <h5 class="modal-title" id="ModalQuestion-1_Label">NOSOTROS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div id="mbody-question-1" class="modal-body" style="background-color: rgba(255, 255, 255, .8);">
+                    <!-- <main class="nos-main"> -->
+                    <!-- <div class="float-left"> -->
+                    <div class="box-txt">
+                        <!-- <h1>NOSOTROS</h1> -->
+                        <p>La Biblioteca Central 'Pedro Zulen', inaugurada en diciembre del año 1999, tiene como visión convertirse en un centro de información y modelo de biblioteca universitaria que brinde servicios de información innovadores a los usuarios
+                            internos y externos a través de una gestión basada en la optimización de recursos tecnológicos, económicos y humanos. Para ello, tiene como misión el ser un centro de recursos de información y difusión del conocimiento científico,
+                            tecnológico y humanístico que contribuya en la formación académico profesional y la investigación, brindando servicios de información pertinentes y de calidad, asumiendo el compromiso institucional de la Universidad, cuyos
+                            ejes están orientados al desarrollo humano y sostenible del país.</p>
+                    </div>
+                    <div class="row box-map">
+
+                        <div class="col-12 col-md-7 g-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.823876765091!2d-77.0878014851873!3d-12.05563609146142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c945e15e2add%3A0xda1b871ab79d9c20!2sBiblioteca+Central+Pedro+Zulen!5e0!3m2!1ses-419!2spe!4v1558385481177!5m2!1ses-419!2spe"
+                                width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="col-12 col-md-5 map-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Av. Germán Amézaga Nº 375.<br> Edificio de Biblioteca Central Pedro Zulen<br> Ciudad Universitaria, Lima I</p>
+                            <p><i class="fas fa-phone"></i> 619-7000, anexo 7701</p>
+                            <p><i class="fas fa-envelope"></i> bibcent@unmsm.edu.pe</p>
+                            <p>Horario de atención al público<br> Lunes a Sábado 8:15 a.m. a 8:00 p.m.</p>
+                        </div>
+
+                    </div>
+                    <!-- </div> -->
+
+                    <!-- </main> -->
+                </div>
+                <div class="modal-footer" style="background-color: rgba(255, 255, 255, .8);">
+                    <button style="background-color: #2d2d2d; border-color: #2d2d2d" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/principal/js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/principal/js/popper/popper.min.js"></script>
+    <script src="../assets/principal/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/principal/js/pagetransitions.js"></script>
+    <script src="../assets/principal/js/miscelanea.js"></script>
+    <script src="../assets/principal/js/navigator.js"></script>
+    <!-- <script src="https://support.ebscohost.com/eit/scripts/ebscohostsearch.js"></script> -->
+    <script src="../assets/principal/js/ebscohostsearch(2).js"></script>
+    <!-- <script src="../assets/principal/js/ebscohostsearch(3).js"></script> -->
+    <!-- <script src="../assets/principal/js/main.js"></script> -->
+    <script src="../assets/principal/js/barras.js"></script>
+    <script src="../assets/principal/js/jquery/jquery.rwdImageMaps.min.js"></script>
+
+</body>
+
+</html>

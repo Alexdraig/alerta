@@ -1,0 +1,77 @@
+* {
+	font-family: Century Gothic, sans-serif;
+}
+
+.nos-body {
+	overflow: auto;
+	height: auto;
+	background-image: url(../images/biblioteca-central.JPG);
+	min-height: 500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.nos-header {
+	width: 100%;
+    /*height: 12vmin;*/
+    height: 95px;
+    /*position: absolute;*/
+    top: 0;
+    transition: transform 0s ease-out;
+    transform: translate(0,0px);
+    z-index: 6;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.nos-main {
+	max-width: 1240px;
+	background: rgba(255, 255, 255, .9);
+	margin: 50px auto;
+	padding: 30px;
+}
+
+.nos-main h1 {
+	color: #c9a327;
+}
+
+.box-txt {
+	/*float: left;*/
+	width: 100%;
+	margin-bottom: 20px
+}
+
+.box-map {
+	/*float: left;*/
+	/*width: 100%;*/
+}
+
+.box-map:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.g-map {
+	/*width: 60%;
+	float: left;*/
+}
+
+.g-map:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.map-info {
+	/*width: 40%;
+	float: right;
+	padding: 20px;*/
+}
+
+.map-info:after {
+	content: "";
+	clear: both;
+	display: table;
+}
